@@ -48,3 +48,15 @@
 12. 浏览器 http 请求的并发性如何体现?,并发请求的数量限制？
 
 > 浏览器会同时和服务器建立多个 tcp 连接，同时发起多个 http 请求，chrome 同时最多 6 个 tcp 连接，不同浏览器稍有差异
+
+13. 浏览器的同源策略？
+
+> 同一协议，同一域名，同一端口
+
+14. 谈谈对 styled-component 的吗发
+
+> styled-component 通过给随机类名的方式解决了 css 全局作用域的问题，可以和组件更好的联动，可以用组件里的 props，更耦合，可以继承
+
+15. performance API 中什么指标可以衡量首屏时间？
+
+> window.performance.timing
