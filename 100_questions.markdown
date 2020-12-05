@@ -60,3 +60,7 @@
 15. performance API 中什么指标可以衡量首屏时间？
 
 > window.performance.timing
+
+16. display: inline 的元素设置 margin 和 padding 会生效吗?
+
+> 左右生效，上下不生效
