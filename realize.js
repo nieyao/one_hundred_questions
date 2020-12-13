@@ -79,6 +79,7 @@ Promise.map = function (list, fn, { concurrency }) {
 // let str = shout("hello world");
 // console.log(str);
 
+// 一行实现compose
 var mb = (p) => (o) => p.map((c) => (o = (o || {})[c])) && o;
 
 const a = { a: 3 };
