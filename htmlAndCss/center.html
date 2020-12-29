@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .div {
+        width: 100px;
+        height: 100px;
+        background: red;
+      }
+      .levelSolution1 {
+        text-align: center;
+      }
+
+      .levelSolution2 {
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        background: red;
+      }
+
+      .levelSolution3 {
+        display: flex;
+        justify-content: center;
+      }
+
+      .levelSolution4 {
+        width: 100px;
+        height: 100px;
+        background: red;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .verticalSolution1 {
+        height: 50px;
+        line-height: 50;
+      }
+
+      .verticalSolution2 {
+        display: flex;
+        align-items: center;
+        height: 300px;
+      }
+
+      .verticalSolution3 {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .verticalSolution4 {
+        width: 100px;
+        height: 100px;
+        background: red;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 水平居中 -->
+    <!-- 1. -->
+    <!-- <div class="levelSolution1">我想要居中</div> -->
+    <!-- 2. -->
+    <!-- <div class="levelSolution2"></div> -->
+    <!-- 3. -->
+    <!-- <div class="levelSolution3"><div class="div"></div></div> -->
+    <!-- 4. -->
+    <!-- <div><div class="levelSolution4"></div></div> -->
+
+    <!-- 垂直居中 -->
+    <!-- 1. -->
+    <!-- <div class="verticalSolution1">我想要居中</div> -->
+    <!-- 2. -->
+    <!-- <div class="verticalSolution2">
+      <div class="div"></div>
+    </div> -->
+    <!-- <div class="verticalSolution3"><div class="div"></div></div> -->
+    <div><div class="verticalSolution4"></div></div>
+  </body>
+</html>
