@@ -20,7 +20,7 @@
     垂直居中：
 
     > line-height = height 可实现文字垂直居中
-    > flex: align-items: \center
+    > flex: align-items: center
     > margin: auto + position: absolute + top: 0 + bottom: 0
     > position:absolute + top: 50% + transform:translateY(-50%)
     > display:table+display:table-cell + vertical-align: middle;
