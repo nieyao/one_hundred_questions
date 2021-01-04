@@ -80,7 +80,7 @@ Promise.map = function (list, fn, { concurrency }) {
 // console.log(str);
 
 // 一行实现compose
-var mb = (p) => (o) => p.map((c) => (o = (o || {})[c])) && o;
+// var mb = (p) => (o) => p.map((c) => (o = (o || {})[c])) && o;
 
-const a = { a: 3 };
-console.log(mb(["a", "b"])(a));
+// const a = { a: 3 };
+// console.log(mb(["a", "b"])(a));
