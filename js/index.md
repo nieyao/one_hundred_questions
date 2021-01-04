@@ -59,3 +59,27 @@
     > 延迟加载：
 
     1. 有些 js 代码初始化时不需要，之后的使用才可能需要
+
+4.  遍历对象的方法？
+
+    > 1.  for in 遍历对象除 symbol 以外的可枚举属性
+    > 2.  object.keys(),去遍历
+    > 3.  Object.getOwnPropertyNames(obj),返回一个包含对象所有属性的数组（不含 symbol，包含不可枚举属性）
+
+5.  Map 和 object 区别?
+
+    > 1. Map 的键可以是任意值；object 的键只能是 string 或者 number
+    > 2. Map 的键是有顺序的，以插入顺序作为迭代顺序；object 的键是无序的
+    > 3. Map 的键值对个数可以通过 size 属性获取，object 只能手动计算
+    > 4. Map 是 iterable 的，可以直接迭代；object 只能先获取键，再用键去迭代
+    > 5. Map 频繁增删键值对的性能更好；object 未对频繁增删键值对做出优化
+    >    tips: object 不是纯粹的 hash 表
+
+6.  promise 的静态方法？
+    > 1. promise.all(): 所有 promise 都成功即返回结果，有一个失败就直接返回失败，返回值顺序和参数顺序保持一致
+    > 2. promise.race():返回一个 promise，一旦参数中有一个 promise 成功或失败，返回的 promise 就会成功或者失败
+    > 3. promise.finally():返回一个 promise，在 promise 执行结束，无论成功还是失败都会执行指定的回调函数
+    > 4. promise.then():返回一个 promise，接受两个参数，成功和失败的回调
+    > 5. promise.catch():返回一个 promise 处理拒绝的情况
+    > 6. promise.allSettled():所有 promise 都完成或失败后，返回一个 promise
+    > 7. promise.any():所有 promise 都失败即返回一个失败的 promise，有一个成功就直接返回成功，本质上和 promise.all 相反
