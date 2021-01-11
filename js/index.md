@@ -1,5 +1,7 @@
 1.  说下继承的几种方式和优缺点？
 
+    > 代码实现见`./inherit.js`
+
     > 1. 原型链继承；将父类的实例作为子类的原型
     >    优点：子类可以通过原型链的查找，实现父类的属性公用
 
@@ -76,6 +78,7 @@
     >    tips: object 不是纯粹的 hash 表
 
 6.  promise 的静态方法？
+
     > 1. promise.all(): 所有 promise 都成功即返回结果，有一个失败就直接返回失败，返回值顺序和参数顺序保持一致
     > 2. promise.race():返回一个 promise，一旦参数中有一个 promise 成功或失败，返回的 promise 就会成功或者失败
     > 3. promise.finally():返回一个 promise，在 promise 执行结束，无论成功还是失败都会执行指定的回调函数
