@@ -76,6 +76,7 @@
     >    tips: object 不是纯粹的 hash 表
 
 6.  promise 的静态方法？
+
     > 1. promise.all(): 所有 promise 都成功即返回结果，有一个失败就直接返回失败，返回值顺序和参数顺序保持一致
     > 2. promise.race():返回一个 promise，一旦参数中有一个 promise 成功或失败，返回的 promise 就会成功或者失败
     > 3. promise.finally():返回一个 promise，在 promise 执行结束，无论成功还是失败都会执行指定的回调函数
@@ -83,3 +84,15 @@
     > 5. promise.catch():返回一个 promise 处理拒绝的情况
     > 6. promise.allSettled():所有 promise 都完成或失败后，返回一个 promise
     > 7. promise.any():所有 promise 都失败即返回一个失败的 promise，有一个成功就直接返回成功，本质上和 promise.all 相反
+
+7.  函数声明和函数表达式区别和用法？
+
+    > 函数声明：函数声明会被提升到最上方，所以无论函数在哪里声明都可以执行
+    > 函数表达式：声明之前无法执行
+
+8.  new 的具体过程？
+
+    > 1. 创建一个简单的空的简单 javascript 对象（即 {}）
+    > 2. 链接该对象（设置该对象的 constrcutor）到另一个对象
+    > 3. 将步骤一新创建的对象作为 this 的上下文
+    > 4. 如果该函数没有返回对象，则返回 this
