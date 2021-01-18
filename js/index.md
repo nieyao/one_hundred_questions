@@ -86,3 +86,15 @@
     > 5. promise.catch():返回一个 promise 处理拒绝的情况
     > 6. promise.allSettled():所有 promise 都完成或失败后，返回一个 promise
     > 7. promise.any():所有 promise 都失败即返回一个失败的 promise，有一个成功就直接返回成功，本质上和 promise.all 相反
+
+7.  函数声明和函数表达式区别和用法？
+
+    > 函数声明：函数声明会被提升到最上方，所以无论函数在哪里声明都可以执行
+    > 函数表达式：声明之前无法执行
+
+8.  new 的具体过程？
+
+    > 1. 创建一个简单的空的简单 javascript 对象（即 {}）
+    > 2. 链接该对象（设置该对象的 constrcutor）到另一个对象
+    > 3. 将步骤一新创建的对象作为 this 的上下文
+    > 4. 如果该函数没有返回对象，则返回 this

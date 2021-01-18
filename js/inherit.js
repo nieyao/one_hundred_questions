@@ -143,3 +143,40 @@
 
 // var son = new Son("jacky", 22, "前端开发");
 // console.log(son);
+
+// 实现inherit
+function merge(target, source) {
+  for (var key in source) {
+    if (!target.hasOwnProperty(key)) {
+      target[key] = source[key];
+    }
+  }
+  return target;
+}
+function inherit(Fn, obj) {
+  function Class() {
+    Fn.call(this, ...arguments);
+  }
+  const clone = Object.create(Fn.prototype);
+  clone.constructor = Class; // 增强对象，弥补因重写原型而失去的默认的constructor 属性
+  Class.prototype = clone; // 指定对象，将新创建的对象赋值给子类的原型
+  merge(Class.prototype, obj);
+  return Class;
+}
+
+let animalNum = 0;
+function Animal(name) {
+  animalNum++;
+  this.name = name;
+}
+Animal.prototype.getName = function () {
+  return this.name;
+};
+const Cat = inherit(Animal, {
+  say: function () {
+    console.log(`NO${animalNum}:${this.getName()}`);
+  },
+});
+const cat1 = new Cat("小花");
+console.log(cat1, "cat1");
+cat1.say(); // NO1:小花
