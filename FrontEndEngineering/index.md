@@ -13,3 +13,5 @@
          9. 预先编译资源模块（DllPlugin，第一次编译构建的时候生成一份不变的代码供其他模块引用，下一次构建就可以节约时间
          10. externals，一些 cdn 引入的文件，依然通过`import .. from '..'` 去使用，并且希望 webpack 不去打包，减少打包体积
          11. source-map 的值改为 `eval-source-map`
+
+2.  热更新原理？
