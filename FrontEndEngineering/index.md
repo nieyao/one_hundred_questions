@@ -15,3 +15,7 @@
          11. source-map 的值改为 `eval-source-map`
 
 2.  热更新原理？
+
+3.  什么是 HMR?
+
+    > Hot module Replacement,模块更新，通过 websocket 替换对应模块达到刷新局部的功能，模块更新事件有冒泡机制
