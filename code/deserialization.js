@@ -8,8 +8,9 @@ function dfs(A, start, d) {
   if (
     start + 2 >= A.length ||
     (start + 2 < A.length && A[start + 2] < A[start])
-  )
+  ) {
     next = null;
+  }
   d[depth - 1][v] = next;
   d[depth] = next;
   dfs(A, start + 2, d);
