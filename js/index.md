@@ -158,3 +158,13 @@
     > 4.  通过对对象的辨别、划分可以将软件系统分割为若干相对为独立的部分，在一定程度上更便于控制软件复杂度。
     > 5.  以对象为中心的设计可以帮助开发人员从静态（属性）和动态（方法）两个方面把握问题，从而更好地实现系统。
     > 6.  通过对象的聚合、联合可以在保证封装与抽象的原则下实现对象在内在结构以及外在功能上的扩充，从而实现对象由低到高的升级。
+
+19. ECMAScript 和 JavaScript 的区别？
+
+    > ECMAScript 是形成 JavaScript 语言基础的脚本语言。
+    > ECMAScript 是由 Ecma 国际标准组织以 ECMA-262 和 ECMA-402 规范的形式进行标准化的。
+    > JavaScript 遵循 ECMAScript 标准,JavaScript 是 ECMAScript 的实例。
+    > ECMAScript 是基于 JavaScript 的，而 JavaScript 也是基于 ECMAScript 的，两者密不可分。
+
+20. async/await 和 promise 相比较？
+    >
