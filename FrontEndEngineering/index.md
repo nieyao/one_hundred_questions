@@ -9,7 +9,7 @@
          5. tree shaking，利用es module，静态导入包，静态分析依赖实现
          6. split chunk，提取公共代码，防止代码被重复打包，拆分过大的 js 文件，合并零散的 js 文件
          7. 分离配置，common、prod、dev，不同环境下需要不同的配置
-         8. 合理配置 resolve，加快 webpack 搜索文件的速度
+         8. 合理配置 resolve，加快 webpack 搜索文件的速度。
          9. 预先编译资源模块（DllPlugin，第一次编译构建的时候生成一份不变的代码供其他模块引用，下一次构建就可以节约时间
          10. externals，一些 cdn 引入的文件，依然通过`import .. from '..'` 去使用，并且希望 webpack 不去打包，减少打包体积
          11. source-map 的值改为 `eval-source-map`
