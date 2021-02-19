@@ -1,8 +1,10 @@
 const handleRequestQueue = (urls, max, callback) => {
   let finished = 0;
+  const tempUrls = [...urls];
+
   const handler = () => {
-    if (urls.length) {
-      const url = urls.shift();
+    if (tempUrls.length) {
+      const url = tempUrls.shift();
       fetch(url)
         .then(() => {
           finished++;
@@ -13,7 +15,7 @@ const handleRequestQueue = (urls, max, callback) => {
         });
     }
 
-    if (finished >= urls.length) {
+    if (finished === urls.length) {
       callback();
     }
   };
@@ -37,9 +39,11 @@ function fetch(idx) {
 }
 
 const max = 3;
+const urls = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const callback = () => {
   console.log("run callback");
 };
 
 handleRequestQueue(urls, max, callback);
+console.log(urls, "urls");
