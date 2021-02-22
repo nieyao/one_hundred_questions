@@ -31,11 +31,11 @@
 
 8. 一个 tcp 连接同时可以发送多少个 http 请求？
 
-> http1.1,一个 tcp 一个 http 请求，http2，多路复用，一个 tcp 连接可以同时发送多个 http 请求
+   > http1.1,一个 tcp 一个 http 请求，http2，多路复用，一个 tcp 连接可以同时发送多个 http 请求
 
 9. 浏览器 http 请求的并发性如何体现?,并发请求的数量限制？
 
-> 浏览器会同时和服务器建立多个 tcp 连接，同时发起多个 http 请求，chrome 同时最多 6 个 tcp 连接，不同浏览器稍有差异
+   > 浏览器会同时和服务器建立多个 tcp 连接，同时发起多个 http 请求，chrome 同时最多 6 个 tcp 连接，不同浏览器稍有差异
 
 10. 浏览器的同源策略？
 
@@ -44,3 +44,14 @@
 11. performance API 中什么指标可以衡量首屏时间？
 
 > window.performance.timing
+
+12. setTimeout、setInterval、requestAnimationFrame、requestIdleCallback 区别？
+
+13. 简单介绍 requestIdleCallback 及使用场景？
+
+    > requestIdleCallback 维护一个函数队列，回调函数将在浏览器空闲时间内执行。
+    > 使用注意事项：
+
+    1. 执行重计算而非紧急任务。
+    2. 空闲回调执行时间应小于 50ms。
+    3. 空闲回调中不要操作 dom,因为它本来就是利用的重排重绘的后的空余时间，而操作 dom 又将造成重排重绘
