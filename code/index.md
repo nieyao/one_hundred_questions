@@ -9,3 +9,7 @@
 3. 实现一个 lodash.get ?
 
    > 见 get.js
+
+4. 实现一个发布/订阅模式？
+
+   > 见 EventEmitter.js
