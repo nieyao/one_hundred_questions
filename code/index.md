@@ -13,3 +13,7 @@
 4. 实现一个发布/订阅模式？
 
    > 见 EventEmitter.js
+
+5. 实现数组扁平化？
+
+   > 见 flatten.js
