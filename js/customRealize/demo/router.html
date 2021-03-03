@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>前端路由实现</title>
+  <script src="../router.js"></script>
+</head>
+<body>
+  <a href="#/">turn yellow</a>
+  <a href="#/blue">turn blue</a>
+  <a href="#/green">turn green</a>
+  <button >back</button>
+  <script>
+    window.Router = new Routers();
+    var content = document.querySelector('body');
+    const button = document.querySelector('button');
+    // change Page anything
+    function changeBgColor(color) {
+      content.style.backgroundColor = color;
+    }
+    Router.route('/', function() {
+      changeBgColor('yellow');
+    });
+    Router.route('/blue', function() {
+      changeBgColor('blue');
+    });
+    Router.route('/green', function() {
+      changeBgColor('green');
+    });
+    button.addEventListener('click', Router.backOff, false);
+  </script>
+</body>
+</html>
