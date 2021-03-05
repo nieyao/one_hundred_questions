@@ -17,3 +17,7 @@
 5. 实现数组扁平化？
 
    > 见 flatten.js
+
+6. 利用 setTimeout 模拟 setInterval?
+
+   > 见 mockSetInterval.js
