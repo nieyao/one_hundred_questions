@@ -2,15 +2,16 @@ const debounce = (fn, timeout) => {
   let timer;
 
   return function (...args) {
-    if (timer) {
-      clearTimeout(timer);
-    }
-    timer = setTimeout(() => {
-      fn.apply(this, args);
-    }, timeout);
+    clearTimeout(timer);
+    timer = setTimeout(fn.bind(this), timeout, ...args);
   };
 };
 
-const debounceFn = debounce(() => {
-  console.log("执行了");
-}, 1000);
+var a = 2;
+
+let obj = {
+  debounceFn: debounce(function () {
+    console.log(this.a, "a");
+  }, 1000),
+  a: 1,
+};
