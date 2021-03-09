@@ -21,3 +21,7 @@
 6. 利用 setTimeout 模拟 setInterval?
 
    > 见 mockSetInterval.js
+
+7. 实现一个 promise.map ?
+
+   > 见 promise.map.js

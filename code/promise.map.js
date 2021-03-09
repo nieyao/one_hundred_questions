@@ -24,11 +24,11 @@ class Limit {
   // async/await 简化错误处理
   async run(fn) {
     this.count++;
-    // console.log(this.count, "count+");
+    console.log(this.count, "count+");
     // 维护一个计数器
     const value = await fn();
     this.count--;
-    // console.log(this.count, "count-");
+    console.log(this.count, "count-");
     // 执行完，看看队列有东西没
     this.dequeue();
     return value;
@@ -55,18 +55,18 @@ Promise.map = function (list, fn, { concurrency }) {
 };
 
 // 测试demo
-// Promise.map(
-//   [1, 2, 3, 4, 5, 6, 7, 8, 9],
-//   (i) =>
-//     new Promise((resolve) => {
-//       console.log("In ", i);
-//       setTimeout(() => {
-//         resolve(i * 1000);
-//         console.log("Out", i, "Out");
-//       }, i * 1000);
-//     }),
-//   { concurrency: 4 }
-// );
+Promise.map(
+  [1, 2, 3, 4, 5, 6, 7, 8, 9],
+  (i) =>
+    new Promise((resolve) => {
+      console.log("In ", i);
+      setTimeout(() => {
+        resolve(i * 1000);
+        console.log("Out", i, "Out");
+      }, i * 1000);
+    }),
+  { concurrency: 4 }
+);
 
 // compose 实现
 // const compose = (...fn) => (...params) =>
