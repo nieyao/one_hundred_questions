@@ -22,16 +22,26 @@ class Limit {
   }
 
   // async/await 简化错误处理
-  async run(fn) {
+  // async run(fn) {
+  //   this.count++;
+  //   console.log(this.count, "count+");
+  //   // 维护一个计数器
+  //   const value = await fn();
+  //   this.count--;
+  //   console.log(this.count, "count-");
+  //   // 执行完，看看队列有东西没
+  //   this.dequeue();
+  //   return value;
+  // }
+
+  run(fn) {
     this.count++;
-    console.log(this.count, "count+");
-    // 维护一个计数器
-    const value = await fn();
-    this.count--;
-    console.log(this.count, "count-");
-    // 执行完，看看队列有东西没
-    this.dequeue();
-    return value;
+    return fn().then((data) => {
+      console.log(this.count, "count");
+      this.count--;
+      this.dequeue();
+      return data;
+    });
   }
 
   build(fn) {
