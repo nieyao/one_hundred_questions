@@ -39,3 +39,7 @@
 5.  webpack 相关面试题？
 
     > 参考文章：[再来一打 Webpack 面试题](https://juejin.cn/post/6844904094281236487)
+
+6.  babel 的编译流程？
+
+    > 参考文章：[JS AST 原理揭秘](https://zhaomenghuan.js.org/blog/js-ast-principle-reveals.html)
