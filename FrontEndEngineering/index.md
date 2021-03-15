@@ -43,3 +43,8 @@
 6.  babel 的编译流程？
 
     > 参考文章：[JS AST 原理揭秘](https://zhaomenghuan.js.org/blog/js-ast-principle-reveals.html)
+
+7.  Compiler 和 Compilation 的区别？
+
+    > Compiler 代表了 webpack 从启动到关闭的声明周期
+    > Compilation 代表了一次新的编译，只要文件有改动，Compilation 就会被重新创建。
