@@ -1,63 +1,67 @@
+/**
+ * 实现一个事件模型（EventEmitter）
+ * 实现简单的 on、remove、once等功能
+ *
+ */
+
 class EventEmitter {
   constructor() {
-    this.cache = {};
+    this.memo = {};
   }
 
-  on(name, fn) {
-    if (this.cache[name]) {
-      this.cache[name].push(fn);
+  on(name, callback) {
+    if (this.memo[name]) {
+      this.memo[name].push(callback);
     } else {
-      this.cache[name] = [fn];
+      this.memo[name] = [callback];
     }
   }
 
-  off(name, fn) {
-    const tasks = this.cache[name];
+  remove(name, callback) {
+    const tasks = this.memo[name];
     if (tasks) {
-      const index = tasks.findIndex((f) => f === fn || f.callback === fn);
+      const index = tasks.findIndex((f) => f === callback);
       if (index >= 0) {
         tasks.splice(index, 1);
       }
     }
   }
 
-  emit(name) {
-    if (this.cache[name]) {
-      // 创建副本，如果回调函数内继续注册相同事件，会造成死循环
-      const tasks = this.cache[name].slice();
-      for (let fn of tasks) {
-        fn();
-      }
+  once(name, callback) {
+    const self = this;
+    function oneTime(...args) {
+      callback.apply(self, args);
+      self.remove(name, oneTime);
     }
+    this.on(name, oneTime);
   }
 
-  emit(name, once = false) {
-    if (this.cache[name]) {
-      // 创建副本，如果回调函数内继续注册相同事件，会造成死循环
-      const tasks = this.cache[name].slice();
+  emit(name, ...args) {
+    if (this.memo[name]) {
+      const tasks = [...this.memo[name]];
       for (let fn of tasks) {
-        fn();
-      }
-      if (once) {
-        delete this.cache[name];
+        fn.apply(this, args);
       }
     }
   }
 }
 
-// 测试
-const eventBus = new EventEmitter();
-const task1 = () => {
-  console.log("task1");
-};
-const task2 = () => {
-  console.log("task2");
-};
-eventBus.on("task", task1);
-eventBus.on("task", task2);
-eventBus.on("task2", task2);
+const emitter = new EventEmitter();
 
-setTimeout(() => {
-  eventBus.emit("task");
-  eventBus.emit("task2");
-}, 1000);
+const callback = function (arg1, arg2) {
+  console.log("listener", arg1, arg2);
+};
+
+emitter.on("someEvent", callback);
+
+emitter.once("someEvent", function (arg1, arg2) {
+  console.log("listener once", arg1, arg2);
+});
+
+emitter.emit("someEvent", "arg1 参数", "arg2 参数");
+
+emitter.emit("someEvent", "arg1 参数1", "arg2 参数1");
+
+emitter.remove("someEvent", callback);
+
+emitter.emit("someEvent", "arg1 参数2", "arg2 参数2");
