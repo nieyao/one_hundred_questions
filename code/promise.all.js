@@ -51,7 +51,7 @@ promiseAll(promises)
     console.log(err);
   });
 
-promiseAll(promise1)
+promiseAll(promises1)
   .then((result) => {
     console.log(result);
   })
