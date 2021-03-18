@@ -37,10 +37,12 @@ const promise4 = new Promise((resolve, reject) => {
 });
 
 const promise5 = Promise.reject("err");
+const promise6 = Promise.reject("err2");
+
 const promises = [promise1, promise2, promise3, promise4];
 // expected output: Array [3, 42, "foo", "bar"]
 
-const promises1 = [promise1, promise2, promise3, promise4, promise5];
+const promises1 = [promise1, promise2, promise3, promise4, promise5, promise6];
 // expected output: "err"
 
 promiseAll(promises)
