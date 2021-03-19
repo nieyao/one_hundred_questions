@@ -16,11 +16,11 @@ function getValue(obj, path, defaultValue) {
     const res = prev[current] ? prev[current] : defaultValue;
     // 如果已经取值到 undefined，直接退出 reduce
     if (!!prev[current] === false) {
-      arr.splice(1);
+      arr.splice(0);
     }
     return res;
   }, obj);
 }
 console.log(getValue(object, "a[0].b.c", 0), "getValue"); // 输出3
 console.log(getValue(array, "[0].a.b[0]", 12)); // 输出 1
-console.log(getValue(array, "[0].a.b[0].c.b", { b: 3 })); // 输出 {b:3}
+console.log(getValue(array, "[0].a.b[0].c.b.b.c.x.x", { b: 3 })); // 输出 {b:3}
