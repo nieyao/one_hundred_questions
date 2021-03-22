@@ -194,3 +194,10 @@
 
         缺点：1. 兼容性不如 hash 路由（兼容到 IE10）
               2. 需要后端支持，每次返回 index.html。
+
+23. defer 和 async 的使用场景和区别？
+
+    > 相同点: 异步加载 (fetch)
+    > 不同点:
+    > async 加载(fetch)完成后立即执行 (execution)，因此可能会阻塞 DOM 解析；(GA 统计)
+    > defer 加载(fetch)完成后延迟到 DOM 解析完成后才会执行(execution)，但会在事件 DomContentLoaded 之前（多个 js 有关联）
