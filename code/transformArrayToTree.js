@@ -9,40 +9,43 @@ function transformArrayToTree(arr) {
   var rootObj = { id: null, name: null, children: [] };
   var nodeObj = {};
   for (var i = 0; i < len; i++) {
-    if (!arr[i].parentId) {
+    let parentId = arr[i].parentId;
+    if (!parentId) {
       rootObj = {
         id: arr[i].id,
         name: arr[i].name,
         children: [],
       };
     } else {
-      if (nodeObj.hasOwnProperty(arr[i].parentId)) {
-        nodeObj[arr[i].parentId].children.push(arr[i]);
+      if (nodeObj.hasOwnProperty(parentId)) {
+        nodeObj[parentId].children.push(arr[i]);
       } else {
-        nodeObj[arr[i].parentId] = {};
-        nodeObj[arr[i].parentId].children = [];
-        nodeObj[arr[i].parentId].children.push(arr[i]);
+        nodeObj[parentId] = {};
+        nodeObj[parentId].children = [];
+        nodeObj[parentId].children.push(arr[i]);
       }
     }
   }
   // 整理根节点过程
   function getChildren(node) {
-    if (nodeObj[node.id] && nodeObj[node.id].children) {
-      node.children = nodeObj[node.id].children;
-      delete nodeObj[node.id];
+    let temp = nodeObj[node.id];
+    if (temp && temp.children) {
+      node.children = temp.children;
+      delete temp;
       var len = node.children.length;
       if (len > 0) {
         for (var i = 0; i < len; i++) {
           getChildren(node.children[i]);
         }
       }
-    } else if (!nodeObj[node.id]) {
+    } else if (!temp) {
+      node.children = [];
       console.log(node.id + "没有children");
     }
   }
   getChildren(rootObj);
   for (var p in nodeObj) {
-    if (nodeObj.hasOwnProperty) {
+    if (nodeObj.hasOwnProperty(p)) {
       console.warn(p + ":没有该父节点");
     }
   }
@@ -59,13 +62,3 @@ let arr = [
 const obj = transformArrayToTree(arr);
 // 输入 1
 console.log(obj);
-
-let a = {
-  id: 1,
-  name: "i1",
-  children: {
-    id: 2,
-    name: "i2",
-    children: {},
-  },
-};

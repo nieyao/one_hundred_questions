@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>浏览器事件冒泡及捕获</title>
+  <style>
+    .parent{
+      width: 500px;
+      height: 500px;
+      background-color: red;
+    }
+
+    .child{
+      width: 200px;
+      height: 200px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="parent" id="parent" onclick="handleParent()"><div class="child" id="child" onclick="handleChild(event)"></div></div>
+  <script>
+    const parent = document.getElementById('parent')
+    function handleParent() {
+      console.log('触发了父元素')
+    }
+    function handleChild(e) {
+      console.log('触发了子元素',e);
+      e.stopPropagation()
+    }
+  </script>
+</body>
+</html>
