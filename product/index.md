@@ -16,3 +16,16 @@
 5. 你们的项目有使用 CI/CD 吗，为什么？
 
 6. 描述一次与运营沟通优化产品的例子？
+
+7. 介绍下产品架构？
+
+   > 前端框架：react
+   > 路由：react-router
+   > 数据管理：redux
+   > ui 组件库：Rsuite
+   > mock： Eolinker
+   > 错误监控：Sentry
+   > 规范类：esLint、styleLint
+   > 部署：docker + devops
+   > 版本管理：git
+   > 开发和集成：gitlab + jenkins
