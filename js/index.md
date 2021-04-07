@@ -201,3 +201,10 @@
     > 不同点:
     > async 加载(fetch)完成后立即执行 (execution)，因此可能会阻塞 DOM 解析；(GA 统计)
     > defer 加载(fetch)完成后延迟到 DOM 解析完成后才会执行(execution)，但会在事件 DomContentLoaded 之前（多个 js 有关联）
+
+24. Typescript 中 type 和 interface 有什么区别？
+
+    > type 是类型别名不产生新的类型。
+    > interface 通过 extend 拓展；type 通过 & 拓展。
+    > interface 可以自动合并（同名接口自动合并）；type 不行（同名 type 报错：重复定义）。
+    > type 可以声明基本类型别名，联合类型，元组类型，而 interface 不可以。
