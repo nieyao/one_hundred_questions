@@ -46,5 +46,5 @@
 
 7.  Compiler 和 Compilation 的区别？
 
-    > Compiler 代表了 webpack 从启动到关闭的声明周期
+    > Compiler 代表了 webpack 从启动到关闭的生命周期。
     > Compilation 代表了一次新的编译，只要文件有改动，Compilation 就会被重新创建。
